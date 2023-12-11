@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jiangle.bigevent.mapper.ArticleMapper">
+    <select id="listArticles" resultType="com.jiangle.bigevent.pojo.Article">
+        select * from article
+        <where>
+            <if test="categoryName!=null">
+                category_name=#{categoryName}
+            </if>
+            <!-- 如果categoryName为null，mybatis会自动处理连接词(这里的and) -->
+            <if test="state!=null">
+                and state=#{state}
+            </if>
+            and create_username=#{createUsername}
+        </where>
+    </select>
+
+    <update id="updateArticle">
+        update article set
+        <if test="title!=null">
+            title=#{title},
+        </if>
+        <if test="content!=null">
+            content=#{content},
+        </if>
+        <if test="coverImg!=null">
+            cover_img=#{coverImg},
+        </if>
+        <if test="state!=null">
+            state=#{state},
+        </if>
+        <if test="categoryName!=null">
+            category_name=#{categoryName},
+        </if>
+        update_time=now()
+        where create_username=#{createUsername} and id=#{id}
+    </update>
+</mapper>

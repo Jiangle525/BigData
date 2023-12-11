@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/user")
 @Validated
 public class UserController {
-    private final String TOKEN = "Authorization";
 
     @Autowired
     private UserService userService;

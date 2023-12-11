@@ -4,6 +4,12 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: 666666
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      password: redis6379
+
 
 # jwt令牌秘钥和过期时间
 jwt-utils:
