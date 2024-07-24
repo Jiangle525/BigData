@@ -9,7 +9,7 @@ import com.jiangle.bigevent.pojo.Result;
 
 public interface ArticleService {
     // 新增文章
-    public Result addArticle(Article article);
+    Result addArticle(Article article);
 
     // 查询文章（条件分页）
     Result<PageBean<Article>> listArticles(ListArticlesDTO listArticlesDTO);

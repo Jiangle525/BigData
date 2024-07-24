@@ -59,7 +59,7 @@ class BigEventApplicationTests {
         user.setPassword("secret");
         HashMap<String, Object> map = JsonUtils.object2HashMap(user);
         System.out.println(map);
-        User u = (User) JsonUtils.hashMap2Object(map, User.class);
+        User u = JsonUtils.hashMap2Object(map, User.class);
         System.out.println(u);
     }
 }
