@@ -13,7 +13,7 @@ spring:
 
 # jwt令牌秘钥和过期时间
 jwt-utils:
-  key: iob&(@$&123nsan24++kf2./japdf
+  key: jiangle
   expiration-time: 24*60*60*1000
 
 
